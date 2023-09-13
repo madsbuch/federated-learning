@@ -1,0 +1,11 @@
+{
+  "name": "federated-learning-workbench",
+  "version": "1.0.0",
+  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "federated-learning": "workspace:*"
+  },
+  "dependencies": {
+    "buffer": "^6.0.3"
+  }
+}

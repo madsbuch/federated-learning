@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.11.0",
+    "zod": "^3.22.2",
+    "federated-learning": "workspace:*"
+  }
+}

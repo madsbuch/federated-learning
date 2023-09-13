@@ -1,0 +1,27 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "lib": ["dom"],
+    "types": ["bun-types"],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "jsxImportSource": "solid-js",
+    "jsx": "preserve",
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["./src/*"],
+      "federated-learning": ["../federated-learning/src/index.ts"]
+    }
+  },
+  "references": [
+    { "path": "../federated-learning" }
+  ],
+  "include": [
+    "src/**/*.tsx",
+    "src/**/*.ts"
+  ],
+}
