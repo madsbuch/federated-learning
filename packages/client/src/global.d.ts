@@ -3,5 +3,5 @@
 /// <reference lib="dom.iterable" />
 
 interface ImportMetaEnv {
-    API_URL: string;
-  }
+  API_URL: string;
+}

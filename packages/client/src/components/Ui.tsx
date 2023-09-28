@@ -31,7 +31,7 @@ export const B = (props: any) => {
 export const Button = (props: {
   disabled: boolean;
   onClick: (
-    e: MouseEvent & { currentTarget: HTMLButtonElement; target: Element }
+    e: MouseEvent & { currentTarget: HTMLButtonElement; target: Element },
   ) => void;
   children: any;
 }) => {

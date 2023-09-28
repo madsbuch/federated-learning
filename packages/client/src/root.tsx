@@ -37,13 +37,13 @@ const Intializer = () => {
         onRemovedParticipant: (participantId) => {
           setParty((p) => ({
             participants: (p?.participants ?? []).filter(
-              (p) => p !== participantId
+              (p) => p !== participantId,
             ),
           }));
         },
         onReady: () => {},
       },
-      wsUrl
+      wsUrl,
     ).init();
 
     setPrivateSum(ps);

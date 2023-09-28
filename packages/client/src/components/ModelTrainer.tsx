@@ -1,7 +1,11 @@
-import { createConvModel, load, train } from "federated-learning";
+import {
+  createConvModel,
+  load,
+  makePredictions,
+  train,
+} from "federated-learning";
 import { useContext } from "solid-js";
 import { AppContext } from "~/store";
-import { showPredictions } from "~/ui";
 import { Button } from "./Ui";
 
 export default function ModelTrainer() {
@@ -30,7 +34,7 @@ export default function ModelTrainer() {
 
     const trainMetrics = await train(modelForTraining, data, {
       onIteration: (...args) => {
-        showPredictions(modelForTraining, data, (ps) => predictions?.[1](ps));
+        makePredictions(modelForTraining, data, (ps) => predictions?.[1](ps));
       },
     });
 
@@ -43,8 +47,8 @@ export default function ModelTrainer() {
     console.log(
       "Model delta",
       await Promise.all(
-        deltaWeights.map(async (w) => Array.from(await w.data()))
-      )
+        deltaWeights.map(async (w) => Array.from(await w.data())),
+      ),
     );
     console.log("Batch count", trainMetrics.trainBatchCount);
 

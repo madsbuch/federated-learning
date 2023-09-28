@@ -1,5 +1,5 @@
 import * as tf from "@tensorflow/tfjs";
-import { MnistData, PrivateSum } from "federated-learning";
+import { MnistData, Prediction, PrivateSum } from "federated-learning";
 import { createContext, createSignal } from "solid-js";
 import { createStore } from "solid-js/store";
 
@@ -27,12 +27,6 @@ export const AppContext = createContext<CtxType>({
     batchCount: number;
   } | null>(null),
 });
-
-export type Prediction = {
-  image: tf.Tensor;
-  prediction: number;
-  label: number;
-};
 
 export function AppStateProvider(props: any) {
   const predictions = createStore<Prediction[]>([]);

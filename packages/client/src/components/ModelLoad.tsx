@@ -1,13 +1,12 @@
-import { createConvModel, load } from "federated-learning";
+import { createConvModel, load, makePredictions } from "federated-learning";
 import { useContext } from "solid-js";
 import { AppContext } from "~/store";
 import * as tf from "@tensorflow/tfjs";
-import { showPredictions } from "~/ui";
 
 export default function ModelLoad() {
   const state = useContext(AppContext);
   const {
-    model: [model, setModel],
+    model: [, setModel],
     privateSum: [privateSum],
     data: [data, setData],
     predictions,
@@ -27,7 +26,7 @@ export default function ModelLoad() {
       const mod = createConvModel();
       mod.setWeights(tensors);
       setModel(mod);
-      showPredictions(mod, d, (ps) => predictions?.[1](ps));
+      makePredictions(mod, d, (ps) => predictions?.[1](ps));
     } else {
       console.error("Error loading model", !!tensors, !!d);
     }

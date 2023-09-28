@@ -17,11 +17,6 @@
       "federated-learning": ["../federated-learning/src/index.ts"]
     }
   },
-  "references": [
-    { "path": "../federated-learning" }
-  ],
-  "include": [
-    "src/**/*.tsx",
-    "src/**/*.ts"
-  ],
+  "references": [{ "path": "../federated-learning" }],
+  "include": ["src/**/*.tsx", "src/**/*.ts"]
 }

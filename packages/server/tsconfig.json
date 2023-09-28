@@ -20,12 +20,7 @@
       "~/*": ["./src/*"],
       "federated-learning": ["../federated-learning/src/index.ts"]
     },
-    "types": [
-      "bun-types"
-    ],
-    
+    "types": ["bun-types"]
   },
-  "references": [
-    { "path": "../federated-learning" }
-  ]
+  "references": [{ "path": "../federated-learning" }]
 }

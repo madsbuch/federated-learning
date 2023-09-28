@@ -17,8 +17,6 @@
     "paths": {
       "~/*": ["./src/*"]
     },
-    "types": [
-      "bun-types"
-    ]
+    "types": ["bun-types"]
   }
 }
